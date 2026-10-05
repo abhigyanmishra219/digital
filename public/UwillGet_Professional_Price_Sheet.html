@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UwillGet Professional Price Sheet</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    body {
+      background: #f1f5f9;
+      color: #1e293b;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .print-actions {
+      max-width: 820px;
+      width: 100%;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ffffff;
+      padding: 14px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .btn-print {
+      background: #FF6B2C;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .btn-print:hover {
+      background: #e5581a;
+    }
+    .sheet-page {
+      background: #ffffff;
+      width: 100%;
+      max-width: 820px;
+      padding: 36px 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      margin-bottom: 24px;
+    }
+    .sheet-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .sheet-logo {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 8px;
+    }
+    .sheet-title {
+      font-size: 26px;
+      font-weight: 850;
+      color: #1B2B5E;
+      margin-bottom: 4px;
+    }
+    .sheet-subtitle {
+      font-size: 14px;
+      color: #64748B;
+      font-weight: 600;
+    }
+    
+    /* Section Bars */
+    .section-bar {
+      color: #ffffff;
+      padding: 10px 16px;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      margin-top: 20px;
+      margin-bottom: 0;
+    }
+    .bar-navy {
+      background: #1B2B5E;
+    }
+    .bar-orange {
+      background: #FF6B2C;
+    }
+    .bar-green {
+      background: #108e4f;
+    }
+
+    /* Sub-section headers inside section */
+    .sub-bar {
+      background: #fff4ed;
+      color: #1B2B5E;
+      padding: 8px 14px;
+      font-weight: 800;
+      font-size: 14px;
+      border-left: 4px solid #FF6B2C;
+      border-top: 1px solid #e2e8f0;
+      border-right: 1px solid #e2e8f0;
+      margin-top: 12px;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 14px;
+    }
+    th, td {
+      padding: 9px 14px;
+      font-size: 13.5px;
+      border: 1px solid #e2e8f0;
+      text-align: left;
+    }
+    th {
+      background: #f8fafc;
+      color: #1B2B5E;
+      font-weight: 800;
+      width: 65%;
+    }
+    th.terms-col {
+      width: 35%;
+      text-align: right;
+    }
+    td.price-cell {
+      text-align: right;
+      font-weight: 800;
+      color: #FF6B2C;
+      font-size: 14px;
+    }
+    .rec-badge {
+      color: #1B2B5E;
+      font-weight: 700;
+      font-size: 12px;
+    }
+    .plan-notes {
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    /* Custom requirements bottom box */
+    .custom-box {
+      background: #1B2B5E;
+      color: #ffffff;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+    }
+    .custom-title {
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+    }
+    .custom-sub {
+      color: #FF6B2C;
+      font-weight: 800;
+      font-size: 14px;
+    }
+    .contact-footer-bar {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-top: none;
+      padding: 10px 14px;
+      text-align: center;
+      font-size: 11.5px;
+      color: #334155;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .print-actions {
+        display: none;
+      }
+      .sheet-page {
+        box-shadow: none;
+        padding: 20px 24px;
+        max-width: 100%;
+        page-break-after: always;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-actions">
+    <div>
+      <strong>UwillGet Official Professional Price Sheet</strong>
+      <div style="font-size: 12px; color: #64748B;">You Want, We Get It. — Direct WhatsApp: +91 9117090518</div>
+    </div>
+    <button class="btn-print" onclick="window.print()">🖨️ Save as PDF / Print</button>
+  </div>
+
+  <!-- Page 1: Sections A & B -->
+  <div class="sheet-page">
+    <div class="sheet-header">
+      <img src="/uwillget_logo_complete.jpeg" alt="UwillGet Logo" class="sheet-logo">
+      <h1 class="sheet-title">Professional Price Sheet</h1>
+      <p class="sheet-subtitle">You Want, We Get It.</p>
+    </div>
+
+    <!-- Section A -->
+    <div class="section-bar bar-navy">
+      A. SERVICES FOR ALL TYPES OF BUSINESS
+    </div>
+
+    <!-- 1. Audit -->
+    <table>
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th class="terms-col">Price / Terms</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1. Full Audit Report</td>
+          <td class="price-cell">₹149</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 2. Growth Solutions -->
+    <div class="sub-bar">2. Complete Digital Growth Solutions for Business</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th class="terms-col">Price / Terms</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>a) Audit + Social Media Setup</td>
+          <td class="price-cell">₹999</td>
+        </tr>
+        <tr>
+          <td>b) Google Business Setup</td>
+          <td class="price-cell">₹399</td>
+        </tr>
+        <tr>
+          <td>c) Social Media Handling — Premium</td>
+          <td class="price-cell">₹6,999 / month</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 3. Social Media Management -->
+    <div class="sub-bar">3. SOCIAL MEDIA MANAGEMENT</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Package</th>
+          <th class="terms-col">Price / Terms</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Starter Package</td>
+          <td class="price-cell">₹1,999 / month</td>
+        </tr>
+        <tr>
+          <td>Growth (Social + Leads)</td>
+          <td class="price-cell">₹3,999 / month</td>
+        </tr>
+        <tr>
+          <td>Premium</td>
+          <td class="price-cell">₹6,999 / month</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 4. Website Management -->
+    <div class="sub-bar">4. WEBSITE MANAGEMENT</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Plan</th>
+          <th class="terms-col">Price / Terms</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Basic Plan</td>
+          <td class="price-cell">₹2,399 / month</td>
+        </tr>
+        <tr>
+          <td>Standard Plan</td>
+          <td class="price-cell">₹4,599 / month</td>
+        </tr>
+        <tr>
+          <td>Business Plan — <span class="rec-badge">Most Recommended</span></td>
+          <td class="price-cell">₹7,999 / month</td>
+        </tr>
+        <tr>
+          <td>Custom Plan</td>
+          <td class="price-cell">₹15,999 / month</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Section B -->
+    <div class="section-bar bar-orange">
+      B. COACHING &amp; INSTITUTES
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Package</th>
+          <th class="terms-col">Included Pricing</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <strong>Starter Package</strong><br>
+            <span style="font-size: 12px; color: #475569;">Website (Business): ₹7,999 one-time<br>+ Social Media (Growth): ₹3,999 / month</span>
+          </td>
+          <td class="price-cell">
+            First Month Total: ₹11,998<br>
+            <span style="font-size: 12px; color: #475569; font-weight: normal;">Then ₹3,999 / month</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>Growth Package</strong><br>
+            <span style="font-size: 12px; color: #475569;">Website (Business): ₹7,999 one-time<br>+ Social Media (Premium): ₹6,999 / month</span>
+          </td>
+          <td class="price-cell">
+            First Month Total: ₹14,998<br>
+            <span style="font-size: 12px; color: #475569; font-weight: normal;">Then ₹6,999 / month</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="plan-notes">Plan flexibility: Changes are applicable as per client requirements based on the Social Media Management plans in A.3 and Website Management plans in A.4.</p>
+  </div>
+
+  <!-- Page 2: Section C & Contact -->
+  <div class="sheet-page">
+    <div class="section-bar bar-green">
+      C. SCHOOLS &amp; COLLEGES
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>SERVICE</th>
+          <th class="terms-col">PRICE / TERMS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1. Manual Social Media Audit + Social Media Setup &amp; Management — One Time</td>
+          <td class="price-cell">₹999</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+        <tr>
+          <th>SERVICE / COMPONENT</th>
+          <th class="terms-col">PRICE / TERMS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            2. Complete Digital Presence — Website (Business plan) + All Social Media (Premium)<br>
+            <span style="font-size: 12px; color: #475569;">First Month Total: ₹7,999 one-time + ₹6,999 / month</span><br>
+            <span style="font-size: 12px; color: #475569;">Thereafter: ₹6,999 / month</span>
+          </td>
+          <td class="price-cell">
+            ₹14,998<br>
+            <span style="font-size: 12px; color: #475569; font-weight: normal;">Thereafter ₹6,999 / mo</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <strong>3. School ERP</strong><br>
+            <span style="font-size: 12px; color: #475569;">Super Admin, Teacher, Student, Parent Portals, Attendance, Fees &amp; Marks</span>
+          </td>
+          <td class="price-cell" style="color: #1B2B5E;">
+            Want to know pricing?<br>
+            <span style="color: #FF6B2C; font-size: 15px;">Let's Discuss!</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="plan-notes">Plan flexibility: Changes are applicable as per client requirements based on the Social Media Management plans in A.3 and Website Management plans in A.4.</p>
+
+    <!-- Custom Box -->
+    <div class="custom-box">
+      <span class="custom-title">CUSTOM REQUIREMENTS?</span>
+      <span class="custom-sub">Let's Discuss Your Requirements</span>
+    </div>
+    <div class="contact-footer-bar">
+      Call / WhatsApp: <strong>+91 9117090518</strong> | <strong>7905239681</strong> &bull; Website: <strong>https://www.uwillget.com/</strong> &bull; Email: <strong>uwillget4@gmail.com</strong>
+    </div>
+  </div>
+
+</body>
+</html>
